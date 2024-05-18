@@ -1,4 +1,5 @@
 from controller.CreateNetworkController import CreateNetworkController
+from controller.TestNetworkController import TestNetworkController
 from model.NeuronalNetwork import NeuronalNetwork
 from view.MainView import MainView
 
@@ -28,7 +29,7 @@ class CoreController:
                 if len(self.__model.get_layers()) == 0:
                     print('The network has not been created yet')
                 else:
-                    print('Netowrk...')
+                    print(self.__model)
 
                 input('Press Enter to continue...')
 
@@ -48,7 +49,8 @@ class CoreController:
                 if len(self.__model.get_layers()) == 0:
                     print('The network has not been created yet')
                 else:
-                    print('Testing...')
+                    test_network_controller = TestNetworkController(network=self.__model)
+                    test_network_controller.run()
 
                 input('Press Enter to continue...')
 
