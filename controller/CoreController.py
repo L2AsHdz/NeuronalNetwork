@@ -1,3 +1,4 @@
+from controller.CreateNetworkController import CreateNetworkController
 from model.NeuronalNetwork import NeuronalNetwork
 from view.MainView import MainView
 
@@ -17,7 +18,8 @@ class CoreController:
             option = self.__view.get_option()
 
             if option == "1":
-                print('Creating network...')
+                create_network_controller = CreateNetworkController(network=self.__model)
+                create_network_controller.run()
                 input('Press Enter to continue...')
 
             elif option == "2":
